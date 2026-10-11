@@ -39,22 +39,23 @@
     "order": 2
   },
   {
-    "id": "gemini-zentauri",
+    "id": "visualguard",
     "designation": "SHB-3b",
-    "slug": "gemini-zentauri",
-    "name": "Gemini Zentauri",
-    "oneLiner": "AI content and image generation behind a social-feed interface.",
-    "description": "An AI-powered app for generating content and images, wrapped in a social-media-style feed with posting and interaction features.",
+    "slug": "visualguard",
+    "name": "VisualGuard",
+    "oneLiner": "Visual regression testing with screenshot comparisons, optional AI analysis, and verified repair proposals.",
+    "description": "A TypeScript developer tool that uses Playwright to compare sites or saved baselines. Pixel differences and DOM snapshots identify changes; optional Gemini or Ollama analysis adds context. Reports collect the evidence, and proposed source repairs can be reviewed and verified against the reference captures.",
     "stack": [
-      "Next.js",
-      "Tailwind CSS",
-      "MongoDB",
+      "TypeScript",
+      "Playwright",
       "Node.js",
-      "Gemini API"
+      "Gemini API",
+      "React",
+      "Tailwind CSS"
     ],
-    "status": "LIVE",
-    "year": 2025,
-    "liveUrl": "https://gemini-ai-agent.vercel.app",
+    "status": "OPEN_SOURCE",
+    "year": 2026,
+    "repositoryUrl": "https://github.com/ShubhamTiwari909/visualguard-ai-testing",
     "featured": false,
     "order": 3
   },

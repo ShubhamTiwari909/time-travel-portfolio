@@ -14,13 +14,15 @@ export const profile = {
 export const experience = sourceExperience[0];
 export const skills = sourceSkills;
 export const articles = sourceArticles;
-export const CONTENT_VERSION = "portfolio-2026-10-11-v1";
+export const CONTENT_VERSION = "portfolio-2026-10-11-v2";
 
 export type Project = {
   slug: string; title: string; category: string; status: string;
   kind: "project" | "experiment"; summary: string; problem: string;
   approach: string; outcome: string; tags: string[];
-  signature: [number, number]; color: string; year: number; liveUrl: string;
+  signature: [number, number]; color: string; year: number;
+  projectUrl: string; repositoryUrl?: string; linkLabel: string;
+  sourceUrl: string; sourceLabel: string;
   milestones: { id: string; period: string; title: string; description: string; evidenceUrl?: string }[];
 };
 
@@ -37,10 +39,10 @@ const editorial: Record<string, { category: string; problem: string; outcome: st
     outcome: "A personal blog CMS with authentication, an admin dashboard, content and media management, analytics, PageSpeed testing, and on-demand revalidation.",
     signature: [3, 4], color: "amber",
   },
-  "gemini-zentauri": {
-    category: "AI & experimentation",
-    problem: "Content and image generation become more approachable when they live inside a familiar interface for creating, posting, and interacting.",
-    outcome: "An AI-powered content and image generation app with a social feed, posting, and interaction features, as described in the supplied project record.",
+  "visualguard": {
+    category: "Developer tools",
+    problem: "A visual change needs more than a failing screenshot: reviewers need to understand what moved, whether it was intentional, and whether a repair actually resolves it.",
+    outcome: "An open-source CLI and Playwright integration that brings screenshots, findings, optional AI analysis, and repair verification into a single report.",
     signature: [1, 2], color: "lilac",
   },
   "portfolio-v1": {
@@ -53,13 +55,19 @@ const editorial: Record<string, { category: string; problem: string; outcome: st
 
 export const projects: Project[] = sourceProjects.map((project) => {
   const detail = editorial[project.slug];
+  const repositoryUrl = project.repositoryUrl;
+  const projectUrl = project.liveUrl ?? repositoryUrl!;
   return {
-    ...detail, slug: project.slug, title: project.name, status: "Live project", kind: "project",
+    ...detail, slug: project.slug, title: project.name,
+    status: repositoryUrl ? "Open-source project" : "Live project", kind: "project",
     summary: project.oneLiner, approach: project.description, tags: project.stack,
-    year: project.year, liveUrl: project.liveUrl,
+    year: project.year, projectUrl, repositoryUrl,
+    linkLabel: repositoryUrl ? "View project on GitHub" : "Visit live project",
+    sourceUrl: repositoryUrl ? `${repositoryUrl}#readme` : "https://github.com/ShubhamTiwari909/astro-space-portfolio/tree/main/src/content",
+    sourceLabel: repositoryUrl ? "Project README" : "Original project notes",
     milestones: [
       { id: "origin", period: "The starting point", title: "The question behind the work", description: detail.problem },
-      { id: "present", period: `${project.year} · Documented project`, title: "What took shape", description: project.description, evidenceUrl: project.liveUrl },
+      { id: "present", period: `${project.year} · Documented project`, title: "What took shape", description: project.description, evidenceUrl: projectUrl },
       { id: "future", period: "Future interest · Speculative", title: "What could come next?", description: "Explore the design or engineering perspective in the observatory. Future directions are prompts for exploration, not claims about completed work." },
     ],
   };

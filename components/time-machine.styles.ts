@@ -1,0 +1,23 @@
+// Complete Tailwind utilities: the WebGL exhibit shares the portfolio's theme tokens.
+export const section = "time-machine relative isolate my-24 overflow-hidden border-y border-line bg-[#030a10] py-16 below-tablet:my-16 mobile:py-10 [--drive-color:var(--accent)] data-[era=past]:[--drive-color:var(--past)] data-[era=future]:[--drive-color:var(--future)]";
+export const ambient = "pointer-events-none absolute inset-0 -z-10 [background:radial-gradient(ellipse_at_50%_52%,#12334370,transparent_65%)]";
+export const header = "relative z-10 flex items-end justify-between gap-10 below-tablet:items-start mobile:flex-col mobile:gap-5";
+export const eyebrow = "mb-4 flex items-center gap-3 font-mono text-[10px] tracking-[.16em] text-[var(--drive-color)] [&_span]:h-1.5 [&_span]:w-1.5 [&_span]:bg-current [&_span]:shadow-[0_0_10px_currentColor]";
+export const title = "text-[clamp(30px,4.1vw,58px)] leading-[1.1] tracking-[-.04em] [&_em]:whitespace-nowrap [&_em]:text-[var(--drive-color)]";
+export const intro = "max-w-72 pb-1 text-[13px] text-muted mobile:max-w-none mobile:text-xs";
+export const viewport = "relative mx-auto h-[560px] w-full max-w-[1700px] overflow-hidden below-tablet:h-[510px] mobile:h-[410px]";
+export const canvas = "absolute inset-0 block h-full w-full touch-pan-y cursor-grab opacity-0 transition-opacity duration-700 data-[ready=true]:opacity-100 active:cursor-grabbing mobile:top-10 mobile:h-[calc(100%_-_40px)]";
+export const fallback = "pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-700 data-[hidden=true]:opacity-0 [&_svg]:h-[88%] [&_svg]:w-[88%] [&_svg]:max-w-[780px]";
+export const label = "pointer-events-none absolute left-[max(32px,calc((100%-1200px)/2))] top-12 font-mono text-[9px] leading-6 tracking-[.14em] text-faint below-desktop:left-8 mobile:left-5 mobile:top-6 mobile:text-[8px]";
+export const labelNumber = "block text-[var(--drive-color)]";
+export const crosshair = "pointer-events-none absolute right-[max(32px,calc((100%-1200px)/2))] top-12 flex items-center gap-2 font-mono text-[9px] tracking-[.12em] text-faint below-desktop:right-8 mobile:right-5 mobile:top-6 mobile:text-[8px]";
+export const guide = "pointer-events-none absolute inset-x-0 bottom-4 text-center font-mono text-[9px] tracking-[.13em] text-faint mobile:bottom-2 mobile:text-[8px]";
+export const controls = "relative z-10 grid grid-cols-[1fr_auto_1fr] items-center gap-8 border-t border-line pt-6 below-tablet:grid-cols-[1fr_auto] below-tablet:gap-5 mobile:grid-cols-1 mobile:gap-5";
+export const destination = "flex min-w-0 flex-col gap-3";
+export const tiny = "font-mono text-[9px] tracking-[.14em] text-faint";
+export const eras = "flex flex-wrap gap-1";
+export const era = "min-h-11 border border-transparent bg-transparent px-3 py-2 font-mono text-[10px] tracking-[.1em] text-muted transition-colors hover:text-foreground aria-pressed:border-[var(--drive-color)] aria-pressed:bg-[color-mix(in_srgb,var(--drive-color)_8%,transparent)] aria-pressed:text-[var(--drive-color)]";
+export const rotate = "flex items-center gap-1 below-tablet:justify-self-end mobile:order-3 mobile:justify-self-start [&_button]:flex [&_button]:h-11 [&_button]:w-11 [&_button]:items-center [&_button]:justify-center [&_button]:border [&_button]:border-line [&_button]:bg-transparent [&_button]:text-muted [&_button:hover]:border-[var(--drive-color)] [&_button:hover]:text-[var(--drive-color)]";
+export const jump = "flex flex-col items-end gap-3 below-tablet:col-span-2 below-tablet:flex-row below-tablet:items-center below-tablet:justify-between mobile:order-2 mobile:col-span-1 mobile:items-start mobile:flex-col";
+export const jumpButton = "flex min-h-12 items-center justify-center gap-3 border border-[var(--drive-color)] bg-[color-mix(in_srgb,var(--drive-color)_10%,transparent)] px-6 font-mono text-[11px] tracking-[.13em] text-[var(--drive-color)] transition-colors hover:bg-[color-mix(in_srgb,var(--drive-color)_18%,transparent)] disabled:opacity-50 mobile:px-5";
+export const status = "min-h-4 font-mono text-[9px] tracking-[.06em] text-muted";

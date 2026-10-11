@@ -23,11 +23,11 @@ export const lensReadings: Record<string, LensReading> = {
     flow: ["Next.js interface", "Content & media", "MongoDB"],
     source: "Architecture reading of the project notes",
   },
-  "gemini-zentauri": {
-    label: "THE CREATION FLOW", title: "From a prompt to a post.",
-    note: "Generation sits inside a familiar interface for publishing and interaction.",
-    flow: ["Create a prompt", "Gemini API", "Social feed"],
-    source: "Flow reading of the project notes",
+  "visualguard": {
+    label: "THE VERIFICATION FLOW", title: "See the change. Verify the repair.",
+    note: "Screenshots and DOM evidence explain a difference before a proposed repair is reviewed and checked.",
+    flow: ["Capture & compare", "Review evidence", "Verify repair"],
+    source: "Workflow reading of the VisualGuard README",
   },
   "portfolio-v1": {
     label: "THE INTERFACE SYSTEM", title: "One visual language.",
