@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./tron.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MotionProvider } from "@/components/motion-provider";
 import { ScrollBackground } from "@/components/scroll-background";
 import { OrbitalTransitionProvider } from "@/components/orbital-transition";
+import { OpeningScene } from "@/components/opening-scene";
+import { profile } from "@/content/portfolio";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,11 +43,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body id="top">
         <MotionProvider>
           <OrbitalTransitionProvider>
-          <ScrollBackground />
-          <a className="skip-link" href="#main-content">Skip to content</a>
-          <SiteHeader />
-          {children}
-          <SiteFooter />
+            <OpeningScene name={profile.name} role={profile.role} yearsExperience={profile.yearsExperience} />
+            <ScrollBackground />
+            <a className="skip-link" href="#main-content">Skip to content</a>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
           </OrbitalTransitionProvider>
         </MotionProvider>
       </body>

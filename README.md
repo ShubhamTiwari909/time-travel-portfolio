@@ -2,6 +2,8 @@
 
 Shubham Tiwari’s portfolio, observed through time. Built from `implementation.md`, with profile, projects, experience, writing, and links imported from the supplied [portfolio content](https://github.com/ShubhamTiwari909/astro-space-portfolio/tree/main/src/content).
 
+The visual direction is Tron-inspired: near-black surfaces, cyan light trails, geometric type, and thin circuit borders. Orange marks the past and blue-violet marks future possibilities. The arrival sequence, instruments, project lenses, case studies, and skills map share this palette. All visuals are original CSS/SVG.
+
 ## Run locally
 
 ```sh
@@ -31,10 +33,11 @@ npm start            # Serve the production build
 
 The SVG instrument works without WebGL. It starts paused. Reduced motion follows the system setting and can be overridden in the header. Project pages and contact information are available independently of the instrument. Audio and analytics are omitted.
 
-Faded orbital lines, stars, and soft light form a shared background. The layers move at different speeds as you scroll, with gentler travel on mobile. Reduced motion keeps them still. Scroll updates use a passive listener and a single scheduled frame, without an idle animation loop or media downloads.
+Faded orbital lines, circuit traces, stars, soft light, and a perspective grid form a shared background. The layers move at different speeds as you scroll, with gentler travel on mobile. Reduced motion keeps them still. Scroll updates use a passive listener and a single scheduled frame, without an idle animation loop or media downloads.
 
 ## Exploring the details
 
+- **Opening scene:** A brief observatory arrival runs once per tab, with four visible readiness steps, an orbital dial, and a soft reveal. Skip with the button or Escape. Reduced motion bypasses it, and content stays available without JavaScript. The sequence measures completed steps rather than claiming network download percentages; font readiness and a painted frame inform its progression, with a 4.5-second escape hatch for stalled resources.
 - **Time lenses:** Hover a project illustration to preview its underlying code or structure. Use the labeled lens button to open it with touch or a keyboard; Escape closes it. Zentauri shows an excerpt from the supplied public API declaration. Other lenses are architecture/design readings of the project descriptions.
 - **Living illustrations:** Component cards assemble, publishing panels settle, and orbital signatures draw once when entering view. Without JavaScript, or with reduced motion, the finished artwork remains visible.
 - **Chapter rail:** Five native anchors follow the introduction, work, thinking, notes, and contact sections. A compact bottom rail replaces the desktop side rail on smaller screens.

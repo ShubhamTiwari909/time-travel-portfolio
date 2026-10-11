@@ -47,6 +47,24 @@ Checked with the connected Chromium browser at 1440 × 1000 and 390 × 844 CSS p
 - Production checks covered the chapter rail, keyboard lens, case-study/next-project navigation, and skill selection with no browser runtime or console errors.
 - Current production build and TypeScript checks passed; all nine engine tests passed. Focused ESLint checks passed for the changed pages, components, and exhibit data. Next.js diagnostics were clear.
 
+## Opening scene
+
+- Observed all four readiness states and final reveal in Chromium. Normal completion restores scrolling, focuses `main-content`, and stores the tab-session completion marker. Navigation and reload do not replay the sequence.
+- Inspected the SVG dial and loading steps at 1440 × 900, 800 × 1000, 390 × 844, 320 × 568, and 844 × 390. Compact layouts fit without horizontal or vertical overflow, and opening does not scroll the scene to its focused button.
+- Touch Skip and keyboard Escape dismiss immediately. Tab does not reach background links; the native dialog returns focus to the skip control on the next cycle. Closing moves focus to the portfolio without changing the viewport.
+- A fresh system-reduced-motion session never opens the dialog. JavaScript-disabled content remains readable. Denied session storage still allows dismissal and keeps the intro dismissed during client navigation.
+- Simulated a font readiness promise that never resolves: the 4.5-second deadline releases the portfolio, restores scrolling, and leaves no runtime errors. All checked flows reported zero page errors.
+- Focused ESLint checks passed for the opening component and root layout. Full production build, TypeScript, and engine tests were not rerun for this isolated presentation change; preceding results remain recorded above.
+
+## Tron-inspired theme
+
+- Checked all ten portfolio/project routes at 1440 × 1000, 390 × 844, and 320 × 568. All use the new cyan palette and Geist display typography, with no horizontal overflow or reported page errors.
+- Inspected the home, project cards/lens, case study, and skills map. The background combines clipped perspective grids, circuit paths, orbital lines, and scroll parallax. Cyan, orange, and blue-violet project accents match the controls and destinations.
+- The themed arrival fits desktop, tablet, mobile, small mobile, and landscape viewports without scrolling or overflow. Normal completion, touch Skip, and Escape restore focus to `main-content`. System reduced motion bypasses the arrival; the header motion setting freezes the grid during scrolling.
+- Home scene playback advances from zero. Keyboard lenses open and close. Next.js still matches three supplied projects in the skill selector.
+- Production checks confirmed stylesheet order and typography, desktop/mobile lenses, the mobile navigation menu, and matching orange portal/case-study accents. Checked flows reported no page errors.
+- Production build and its TypeScript checks passed. Focused ESLint checks passed for all changed TS/TSX files. Engine tests were not rerun because the theme does not change clock, math, or journey logic.
+
 ## Remaining evaluation
 
 Physical-device performance, Safari/Firefox, screen-reader testing, independent WCAG evaluation, moderated usability, and VisualGuard comparisons have not been performed. Exact historical dates and original prototype artifacts are still needed for chronological project evolution; current checkpoints are labeled reading perspectives. The 3D chamber and expansion exhibits are intentionally deferred according to the plan's vertical-slice gate.

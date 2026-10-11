@@ -12,8 +12,30 @@
 .glow {
   position:absolute;
   inset:-120px;
-  background:radial-gradient(ellipse at 82% 22%,#a1bb6a14,transparent 48%),radial-gradient(ellipse at 8% 88%,#dcb88809,transparent 42%);
+  background:radial-gradient(ellipse at 78% 26%,#00d8ff18,transparent 48%),radial-gradient(ellipse at 8% 88%,#ff9b450b,transparent 42%);
   transform:translate3d(0,calc(var(--scroll-progress) * -35px),0);
+}
+.floor {
+  position:absolute;
+  left:-25%;
+  bottom:-28vh;
+  width:150%;
+  height:65vh;
+  background:linear-gradient(#62f5ff35 1px,transparent 1px),linear-gradient(90deg,#62f5ff35 1px,transparent 1px);
+  background-size:80px 80px;
+  transform:perspective(550px) rotateX(62deg) translateY(calc(var(--scroll-progress) * -70px));
+  transform-origin:center top;
+  mask-image:linear-gradient(transparent,#0009 35%,#000 85%);
+  opacity:.45;
+}
+.circuits {
+  position:absolute;
+  inset:-50px 0;
+  width:100%;
+  height:calc(100% + 100px);
+  stroke-width:1;
+  opacity:.17;
+  transform:translate3d(calc(var(--scroll-progress) * -12px),calc(var(--scroll-progress) * -55px),0);
 }
 .stars,.orbits,.dial {
   position:absolute;
@@ -36,7 +58,7 @@
 .fade {
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,#1013108c,transparent 45%,#10131038),linear-gradient(0deg,#101310b3,transparent 28%,transparent 75%,#10131040);
+  background:linear-gradient(90deg,#050b128c,transparent 45%,#050b1238),linear-gradient(0deg,#050b12b3,transparent 28%,transparent 75%,#050b1240);
 }
 :global([data-motion="reduced"]) .glow,
 :global([data-motion="reduced"]) .stars,
@@ -44,9 +66,12 @@
 :global([data-motion="reduced"]) .dial {
   transform:none;
 }
+:global([data-motion="reduced"]) .circuits { transform:none; }
 @media(max-width:600px) {
   .stars { opacity:.24; transform:translate3d(0,calc(var(--scroll-progress) * -16px),0); }
   .orbits { opacity:.09; transform:translate3d(0,calc(var(--scroll-progress) * -44px),0) rotate(calc(var(--scroll-progress) * -2deg)); }
   .dial { opacity:.06; transform:translate3d(0,calc(var(--scroll-progress) * -64px),0); }
   .glow { transform:translate3d(0,calc(var(--scroll-progress) * -20px),0); }
+  .floor { opacity:.28; background-size:55px 55px; }
+  .circuits { opacity:.12; }
 }

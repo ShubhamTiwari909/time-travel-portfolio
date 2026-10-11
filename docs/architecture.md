@@ -6,7 +6,15 @@ The root layout and page content are Server Components. Interactive islands own 
 
 The instrument is SVG with analytical geometry; no extra rendering dependency is required. It has one requestAnimationFrame authority per active exhibit. Rendering is capped at approximately 30 updates a second, stops when paused, and skips hidden-tab elapsed time. Initial playback is paused. System or explicit reduced motion disables continuous playback while leaving seeking available.
 
+## Visual system
+
+The Tron-inspired palette uses near-black backgrounds, cyan present-state controls, orange past accents, and blue-violet future accents. Theme tokens live in `app/globals.css`; `app/tron.css` supplies geometric typography, illuminated borders, framed instruments, and responsive heading sizes. It is imported after the base stylesheet. CSS modules and SVG colors use the same palette; `projectColors` matches the case-study tokens. Existing project color identifiers remain stable to preserve content and journey compatibility.
+
+The shared background adds original SVG circuit traces and a CSS perspective grid. Both read the existing scroll-progress variable, so the theme introduces no idle rendering loop. The grid stays clipped within the decorative background, and the opening grid is clipped separately to avoid extending the dialog's scroll area. Reduced motion resets progress and disables scroll updates while retaining static grid perspective. Glows use CSS shadows and SVG filters; heading changes use the existing self-hosted Geist fonts, with no new assets or dependencies.
+
 ## Portfolio interactions
+
+`OpeningScene` lives in the persistent root layout. Its server-rendered native dialog starts closed, preserving direct content without JavaScript. After motion preferences hydrate, it opens modally for the first tab visit. Four staged steps wait for font readiness and a painted frame; short minimum durations make the sequence readable. The progress indicator represents completed steps, not network bytes. Native dialog behavior prevents background interaction, while Skip and Escape close immediately. Normal completion uses a finite CSS reveal, restores scrolling, and moves focus to the main content without moving the viewport. A 4.5-second deadline releases the page if readiness stalls. Timers and frames are cancelled on dismissal or cleanup. Reduced motion bypasses the sequence entirely.
 
 `ProjectExhibit` presents a hover preview and a persistent keyboard/touch lens. Its real code excerpt and authored flow readings live in `content/exhibits.ts`. `ProjectArt` uses an IntersectionObserver to start finite CSS animations on entry; the observer disconnects afterward, and static artwork remains the default HTML rendering.
 
@@ -30,7 +38,7 @@ Pure reconstruction has no storage, navigation, clipboard, or download effects. 
 
 ## Persistence
 
-Only `time-observatory:journey:v1` and `time-observatory:motion` are used. Reset clears this application's journey record. Deserialization checks schema/content compatibility, permissible actions and project IDs, finite time, unique event and branch IDs, chronological sequences, parent-before-child ancestry, event ownership, complete assignment, valid fork positions, and cursor bounds.
+Local storage uses `time-observatory:journey:v1` and `time-observatory:motion`. Session storage uses `time-observatory:opening:v1` solely to suppress repeat arrivals in the same tab; an in-memory fallback covers navigation when storage is denied. Reset clears this application's journey record. Deserialization checks schema/content compatibility, permissible actions and project IDs, finite time, unique event and branch IDs, chronological sequences, parent-before-child ancestry, event ownership, complete assignment, valid fork positions, and cursor bounds.
 
 A saved journey is offered for continuation; it does not silently replace the landing state. Storage denial or quota failure retains an in-memory session. Canonical project links accept a known `milestone` query. Unknown checkpoints show useful content and a recovery message.
 
@@ -42,7 +50,7 @@ Lissajous curves use x(t)=A sin(at+φ), y(t)=B sin(bt). Positive integer frequen
 
 Profile, projects, experience, writing, architecture, and code excerpts come from the user's supplied repository. New explanatory copy is editorial. The four project years come from that source. Exact historical milestones were not supplied, so project checkpoints explicitly present a starting question, a documented implementation, and a speculative future.
 
-The résumé is copied from that repository's public directory. Illustrations and favicon were authored locally as CSS/SVG; project artwork is labeled conceptual. Geist and Geist Mono are self-hosted through next/font. Georgia uses the visitor's installed system font. No external images, sound, tracking, account, or database are required.
+The résumé is copied from that repository's public directory. Illustrations and favicon were authored locally as CSS/SVG; project artwork is labeled conceptual. Geist and Geist Mono are self-hosted through next/font and provide the themed display, interface, and console typography. No external images, sound, tracking, account, or database are required.
 
 ## Validation boundary
 

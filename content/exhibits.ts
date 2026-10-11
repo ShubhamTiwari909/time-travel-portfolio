@@ -2,7 +2,7 @@ import excerpts from "./source/code-excerpts.json";
 import { projects, skills, type Project } from "./portfolio";
 
 export const projectColors: Record<string, string> = {
-  sage: "#d7e8b2", amber: "#dcb888", lilac: "#bcafd1",
+  sage: "#62f5ff", amber: "#ff9b45", lilac: "#8ea5ff",
 };
 
 export type LensReading = {

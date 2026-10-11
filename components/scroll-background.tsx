@@ -50,6 +50,12 @@ export function ScrollBackground() {
 
   return <div ref={rootRef} className={styles.background} aria-hidden="true">
     <div className={styles.glow} />
+    <div className={styles.floor} />
+    <svg className={styles.circuits} viewBox="0 0 1440 1000" fill="none" stroke="currentColor" preserveAspectRatio="xMidYMid slice">
+      <path d="M0 170h154l62 62h196l48-48h118M1440 126h-122l-88 88h-93l-54 54v118M0 755h171l70-70h147l43 43h88M1440 852h-153l-67-67h-201l-48-48H838" />
+      <path d="M0 182h148l62 62h206M1440 864h-159l-67-67h-189" opacity=".35" />
+      <g fill="currentColor" stroke="none"><rect x="576" y="181" width="5" height="5" /><rect x="1080" y="384" width="5" height="5" /><rect x="517" y="725" width="5" height="5" /><rect x="836" y="734" width="5" height="5" /></g>
+    </svg>
     <svg className={styles.stars} viewBox="0 0 1440 1000" fill="currentColor" preserveAspectRatio="xMidYMid slice">
       {stars.map(([x, y], index) => <circle key={index} cx={x} cy={y} r={index % 5 === 0 ? 1.8 : 1} opacity={index % 3 === 0 ? 0.8 : 0.4} />)}
       <path d="m76 108 119 153 128-182M1067 648l118 176 142-240" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.16" />

@@ -44,10 +44,10 @@ export function SkillsConstellation() {
       <div className={styles.map} role="group" aria-label="Skills constellation" aria-describedby="constellation-instructions">
         <div className={styles.mapHeading}><span>THE TOOLKIT / {skills.length} STARS</span><span>SELECT TO CONNECT</span></div>
         <svg viewBox="0 0 800 620" aria-hidden="true" className={styles.connections}>
-          <ellipse cx="222" cy="164" rx="183" ry="143" fill="#d7e8b203" stroke="#d7e8b20f" strokeDasharray="2 10" />
-          <ellipse cx="594" cy="207" rx="167" ry="149" fill="#dcb88803" stroke="#dcb8880f" strokeDasharray="2 10" />
-          <ellipse cx="397" cy="451" rx="303" ry="136" fill="#bcafd103" stroke="#bcafd10f" strokeDasharray="2 10" />
-          {edges.map(({ from, to }) => <line key={`${from.id}-${to.id}`} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke={from.id === selectedId || to.id === selectedId ? groupColors[selected.constellation] : "#4a563e"} strokeWidth={from.id === selectedId || to.id === selectedId ? "1.5" : ".6"} opacity={from.id === selectedId || to.id === selectedId ? ".8" : ".45"} />)}
+          <ellipse cx="222" cy="164" rx="183" ry="143" fill="#62f5ff03" stroke="#62f5ff0f" strokeDasharray="2 10" />
+          <ellipse cx="594" cy="207" rx="167" ry="149" fill="#ff9b4503" stroke="#ff9b450f" strokeDasharray="2 10" />
+          <ellipse cx="397" cy="451" rx="303" ry="136" fill="#8ea5ff03" stroke="#8ea5ff0f" strokeDasharray="2 10" />
+          {edges.map(({ from, to }) => <line key={`${from.id}-${to.id}`} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke={from.id === selectedId || to.id === selectedId ? groupColors[selected.constellation] : "#394f5b"} strokeWidth={from.id === selectedId || to.id === selectedId ? "1.5" : ".6"} opacity={from.id === selectedId || to.id === selectedId ? ".8" : ".45"} />)}
           {linkedProjects.length > 0 && <path d={`M${selected.x},${selected.y} Q780,${selected.y} 785,310`} fill="none" stroke="var(--skill-accent)" strokeWidth=".8" strokeDasharray="3 8" opacity=".35" />}
           {skills.map((skill) => <g key={skill.id}>
             {skill.id === selectedId && <circle cx={skill.x} cy={skill.y} r="20" fill="var(--skill-accent)" fillOpacity=".08" stroke="var(--skill-accent)" strokeOpacity=".4" />}
