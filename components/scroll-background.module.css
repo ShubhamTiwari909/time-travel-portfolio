@@ -1,0 +1,52 @@
+.background {
+  --scroll-progress:0;
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+  user-select:none;
+  color:var(--accent);
+  contain:strict;
+}
+.glow {
+  position:absolute;
+  inset:-120px;
+  background:radial-gradient(ellipse at 82% 22%,#a1bb6a14,transparent 48%),radial-gradient(ellipse at 8% 88%,#dcb88809,transparent 42%);
+  transform:translate3d(0,calc(var(--scroll-progress) * -35px),0);
+}
+.stars,.orbits,.dial {
+  position:absolute;
+  inset:-100px -40px;
+  width:calc(100% + 80px);
+  height:calc(100% + 200px);
+}
+.stars {
+  opacity:.32;
+  transform:translate3d(0,calc(var(--scroll-progress) * -28px),0);
+}
+.orbits {
+  opacity:.12;
+  transform:translate3d(calc(var(--scroll-progress) * -18px),calc(var(--scroll-progress) * -78px),0) rotate(calc(var(--scroll-progress) * -4deg));
+}
+.dial {
+  opacity:.075;
+  transform:translate3d(calc(var(--scroll-progress) * 15px),calc(var(--scroll-progress) * -125px),0) rotate(calc(var(--scroll-progress) * 3deg));
+}
+.fade {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#1013108c,transparent 45%,#10131038),linear-gradient(0deg,#101310b3,transparent 28%,transparent 75%,#10131040);
+}
+:global([data-motion="reduced"]) .glow,
+:global([data-motion="reduced"]) .stars,
+:global([data-motion="reduced"]) .orbits,
+:global([data-motion="reduced"]) .dial {
+  transform:none;
+}
+@media(max-width:600px) {
+  .stars { opacity:.24; transform:translate3d(0,calc(var(--scroll-progress) * -16px),0); }
+  .orbits { opacity:.09; transform:translate3d(0,calc(var(--scroll-progress) * -44px),0) rotate(calc(var(--scroll-progress) * -2deg)); }
+  .dial { opacity:.06; transform:translate3d(0,calc(var(--scroll-progress) * -64px),0); }
+  .glow { transform:translate3d(0,calc(var(--scroll-progress) * -20px),0); }
+}
