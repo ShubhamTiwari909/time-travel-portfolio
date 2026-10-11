@@ -36,6 +36,17 @@ Checked with the connected Chromium browser at 1440 × 1000 and 390 × 844 CSS p
 - Navigating to projects resets scroll progress correctly and retains the shared background. Current Next.js diagnostics are clear.
 - Focused ESLint checks on the background, motion provider, layout, and home page passed. Full build, type checks, and engine tests were not rerun for this visual change; the earlier results above remain from the preceding implementation.
 
+## Five portfolio interactions
+
+- Desktop hover opens a time lens; keyboard Enter pins it and Escape closes it. A touch-emulated mobile browser opens and closes the lens on tap. Inspected its code reading at full opacity.
+- Project illustrations remain unanimated before entering view, then use the component, CMS, or signature animation. System reduced motion renders all three as static artwork.
+- Chapter anchors reach the work/contact sections and update the active indicator. The mobile rail fits a 390-pixel viewport with 44-pixel controls. The 800-pixel tablet layout also fits without overflow.
+- Opening Payload CMS produced an amber orbital transition and an amber case-study accent; its overlay cleaned up after completion. Reduced-motion navigation to Gemini retained the lilac accent without adding an overlay.
+- Skills selector: Next.js matches three projects, Tailwind CSS four, and TypeScript/accessibility Zentauri UI. Playwright displays the broader toolkit and its supplied accessibility connection. Arrow keys change the selected star and move focus. Mobile uses the native selector and remains free of horizontal overflow.
+- Project category filtering still returns one design-system project and restores all four. Home scene playback still advances from the left endpoint.
+- Production checks covered the chapter rail, keyboard lens, case-study/next-project navigation, and skill selection with no browser runtime or console errors.
+- Current production build and TypeScript checks passed; all nine engine tests passed. Focused ESLint checks passed for the changed pages, components, and exhibit data. Next.js diagnostics were clear.
+
 ## Remaining evaluation
 
 Physical-device performance, Safari/Firefox, screen-reader testing, independent WCAG evaluation, moderated usability, and VisualGuard comparisons have not been performed. Exact historical dates and original prototype artifacts are still needed for chronological project evolution; current checkpoints are labeled reading perspectives. The 3D chamber and expansion exhibits are intentionally deferred according to the plan's vertical-slice gate.

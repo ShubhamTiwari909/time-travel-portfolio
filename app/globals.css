@@ -353,6 +353,34 @@ pre { font-family:var(--font-geist-mono),monospace; font-size:11px; line-height:
 .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
 .skills-grid .tag-list { margin-top:17px; }
 .skills-grid .tag-list>span { font-size:10px; padding:6px 10px; }
+.skills-invitation { color:var(--muted); font-size:12px; margin:-10px 0 28px; }
+.case-study { --case-accent:var(--accent); }
+.case-study.amber { --case-accent:var(--past); }
+.case-study.lilac { --case-accent:var(--future); }
+.case-study .present { color:var(--case-accent); }
+.case-study .case-actions .button-primary { background:var(--case-accent); border-color:var(--case-accent); }
+.case-study .case-actions .button-primary:hover { filter:brightness(1.08); }
+.case-study .case-meta .eyebrow { color:var(--case-accent); }
+.project-art[data-art-reveal="played"] .component-composition { animation:component-arrive 900ms cubic-bezier(.2,.65,.3,1) both; }
+.project-art[data-art-reveal="played"] .mini-swatch-row i { animation:detail-arrive 600ms ease both; animation-delay:230ms; }
+.project-art[data-art-reveal="played"] .mini-swatch-row i:nth-child(2) { animation-delay:300ms; }
+.project-art[data-art-reveal="played"] .mini-swatch-row i:nth-child(3) { animation-delay:370ms; }
+.project-art[data-art-reveal="played"] .mini-swatch-row i:nth-child(4) { animation-delay:440ms; }
+.project-art[data-art-reveal="played"] .mini-swatch-row i:nth-child(5) { animation-delay:510ms; }
+.project-art[data-art-reveal="played"] .floating-chip { animation:chip-arrive 750ms 260ms ease both; }
+.project-art[data-art-reveal="played"] .cms-composition { animation:cms-arrive 850ms cubic-bezier(.2,.65,.3,1) both; }
+.project-art[data-art-reveal="played"] .cms-lines i { transform-origin:left; animation:line-arrive 650ms 300ms ease both; }
+.project-art[data-art-reveal="played"] .cms-lines i:nth-child(2) { animation-delay:420ms; }
+.project-art[data-art-reveal="played"] .cms-lines i:nth-child(3) { animation-delay:540ms; }
+.project-art[data-art-reveal="played"] .cms-pill { animation:detail-arrive 650ms 550ms ease both; }
+.project-art[data-art-reveal="played"] .signature-path { stroke-dasharray:1; animation:signature-draw 1400ms ease-out both; }
+@keyframes component-arrive { from { transform:translateY(22px) rotate(-9deg) scale(.95); opacity:.3; } to { transform:rotate(-5deg); opacity:1; } }
+@keyframes cms-arrive { from { transform:translate(14px,22px) rotate(0deg); opacity:.3; } to { transform:rotate(4deg); opacity:1; } }
+@keyframes detail-arrive { from { transform:translateY(7px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+@keyframes chip-arrive { from { transform:translate(12px,10px) rotate(12deg); opacity:0; } to { transform:rotate(8deg); opacity:1; } }
+@keyframes line-arrive { from { transform:scaleX(.15); opacity:.2; } to { transform:scaleX(1); opacity:1; } }
+@keyframes signature-draw { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+@media(max-width:1100px) { .home-page+.site-footer { padding-bottom:85px; } }
 .contact-layout { display:grid; grid-template-columns:1.45fr 1fr; gap:80px; align-items:center; padding-block:85px 65px; }
 .contact-layout h1 { font-size:76px; letter-spacing:-2.5px; line-height:1.1; margin-top:26px; }
 .contact-lede { font-size:14px; color:var(--muted); margin-top:27px; }

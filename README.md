@@ -21,17 +21,27 @@ npm start            # Serve the production build
 
 ## Experience
 
-- `/`: Introduction, an interactive orbital instrument, selected projects, writing, and contact.
+- `/`: Introduction, an interactive orbital instrument, a scroll chapter rail, project time lenses, writing, and contact.
 - `/projects`: Filterable project collection.
 - `/projects/[slug]`: Server-rendered case studies, original notes, live demos, and shareable reading checkpoints.
 - `/observatory`: Play, pause, reverse, and seek scene time. Choose a design or engineering perspective, return to the choice, create a new path, and revisit either branch.
 - `/lab`: Lissajous frequencies, phase offset, reversible playback, explained equations, and project signatures.
-- `/about`: Biography, achievements, system architecture, skills, and résumé.
+- `/about`: Biography, achievements, system architecture, an interactive skills constellation, and résumé.
 - `/contact`: Email, professional profiles, and the original résumé PDF.
 
 The SVG instrument works without WebGL. It starts paused. Reduced motion follows the system setting and can be overridden in the header. Project pages and contact information are available independently of the instrument. Audio and analytics are omitted.
 
 Faded orbital lines, stars, and soft light form a shared background. The layers move at different speeds as you scroll, with gentler travel on mobile. Reduced motion keeps them still. Scroll updates use a passive listener and a single scheduled frame, without an idle animation loop or media downloads.
+
+## Exploring the details
+
+- **Time lenses:** Hover a project illustration to preview its underlying code or structure. Use the labeled lens button to open it with touch or a keyboard; Escape closes it. Zentauri shows an excerpt from the supplied public API declaration. Other lenses are architecture/design readings of the project descriptions.
+- **Living illustrations:** Component cards assemble, publishing panels settle, and orbital signatures draw once when entering view. Without JavaScript, or with reduced motion, the finished artwork remains visible.
+- **Chapter rail:** Five native anchors follow the introduction, work, thinking, notes, and contact sections. A compact bottom rail replaces the desktop side rail on smaller screens.
+- **Orbital navigation:** Opening a project produces a brief expanding ring in its accent color. Navigation proceeds immediately; new-tab and external links keep their normal behavior. The same color appears in the case study. Reduced motion removes the rings.
+- **Skills constellation:** Explore the 24 supplied skills, their authored connections, and related projects on the about page. Desktop stars support arrow keys and Home/End. A native grouped selector works on every screen, including mobile. Project relationships come from explicit stack tags or documented project capabilities; broader skills remain in the toolkit without fabricated project links.
+
+These interface choices are local to the current view and do not alter scene time or saved journeys. The features use React, native browser APIs, CSS, and inline SVG without adding animation libraries or media assets.
 
 ## Authoring
 

@@ -1,0 +1,8 @@
+.portal { position:fixed; inset:0; z-index:60; pointer-events:none; overflow:hidden; color:var(--orbit-color); animation:portal-fade 700ms ease-out both; }
+.portal i { position:absolute; left:var(--orbit-x); top:var(--orbit-y); width:40px; height:40px; border:1px solid currentColor; border-radius:50%; box-shadow:0 0 20px color-mix(in srgb,currentColor 15%,transparent); animation:orbit-expand 680ms cubic-bezier(.15,.6,.2,1) both; }
+.portal i:nth-of-type(2) { animation-delay:45ms; opacity:.6; border-style:dashed; }
+.portal i:nth-of-type(3) { animation-delay:85ms; opacity:.3; }
+.halo { position:absolute; inset:0; background:radial-gradient(circle at var(--orbit-x) var(--orbit-y),color-mix(in srgb,var(--orbit-color) 9%,transparent),transparent 65%); }
+@keyframes orbit-expand { from { transform:translate(-50%,-50%) scale(.25); } to { transform:translate(-50%,-50%) scale(85); opacity:0; } }
+@keyframes portal-fade { 0% { opacity:0; } 12% { opacity:1; } 100% { opacity:0; } }
+@media(prefers-reduced-motion:reduce) { .portal { display:none; } }

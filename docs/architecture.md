@@ -6,6 +6,18 @@ The root layout and page content are Server Components. Interactive islands own 
 
 The instrument is SVG with analytical geometry; no extra rendering dependency is required. It has one requestAnimationFrame authority per active exhibit. Rendering is capped at approximately 30 updates a second, stops when paused, and skips hidden-tab elapsed time. Initial playback is paused. System or explicit reduced motion disables continuous playback while leaving seeking available.
 
+## Portfolio interactions
+
+`ProjectExhibit` presents a hover preview and a persistent keyboard/touch lens. Its real code excerpt and authored flow readings live in `content/exhibits.ts`. `ProjectArt` uses an IntersectionObserver to start finite CSS animations on entry; the observer disconnects afterward, and static artwork remains the default HTML rendering.
+
+The home page owns `ChapterRail`. Native section anchors retain normal hash navigation, while one scheduled scroll frame updates the current section and progress. The side rail becomes a bottom rail at narrower widths. These observers/listeners clean up when their components unmount.
+
+`OrbitalTransitionProvider` persists in the root layout. `ProjectLink` uses Next Link's `onNavigate` event to start a brief, non-interactive ring overlay without intercepting or delaying routing. It captures the source link's center and project accent, then removes the overlay at animation completion with a timeout fallback. Modifier-key/new-tab navigation bypasses this event. The destination case study carries the same accent. Reduced motion suppresses the overlay.
+
+`SkillsConstellation` reads the supplied skill positions and connections. Desktop star controls use a directional focus search and roving tab index, with Home/End support. A native grouped selector provides a direct alternative on every screen and is the primary mobile control. Project matches use explicit stack tags, named API aliases, or capabilities documented in the supplied project descriptions. A skill without project-specific evidence displays the broader toolkit rather than inventing a relationship.
+
+Lens state, skill selection, chapter position, and navigation effects are transient presentation state. They do not append journey events, alter scene time, or require a saved-data version change. No new runtime dependencies were introduced.
+
 ## Three domains
 
 1. **Scene time:** bounded to 0–60 seconds in `engine/clock.ts`; it evaluates instrument positions independently of prior frames.
